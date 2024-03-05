@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const livroSchema = new Schema({
     nomeLivro:{
         type:String,
-        required:true
+        required:false
     },
     quantidadePag:{
         type:String,
@@ -17,8 +17,8 @@ const livroSchema = new Schema({
     },
     imgUrl:{
         type:String,
-        required:true
+        required:false
     }
 })
 
-module.exports = mongoose.model("livros", livroSchema)
+module.exports = mongoose.model("Livro", livroSchema)

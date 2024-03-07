@@ -1,7 +1,21 @@
 const livroModel = require("../models/livroModel")
 const { validationResult } = require("express-validator");
 
-exports.postzinho = (req,res,next) =>{
+
+exports.getBooks = (req, res, next) => {
+    
+    livroModel.find()
+        .then(result => {
+            res.status(200).json({
+                livros: result
+            })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+}
+exports.postBook = (req,res,next) =>{
   
 
     const nomeLivro = req.body.nomeLivro;
